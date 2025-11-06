@@ -1,0 +1,68 @@
+body {
+  background: #f8f8fb;
+  color: #1f2933;
+}
+
+.container {
+  max-width: 960px;
+  margin: 4rem auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.subtitle {
+  margin-top: -1rem;
+  color: #52606d;
+}
+
+.analysis-form textarea {
+  width: 100%;
+}
+
+.score {
+  font-size: 4rem;
+  font-weight: 700;
+  margin: 1rem 0;
+}
+
+.keywords,
+.gaps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.keywords ul,
+.gaps ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+}
+
+.section-help {
+  color: #7b8794;
+  font-size: 0.9rem;
+}
+
+.messages {
+  list-style: none;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  background-color: #fde8e8;
+  border-radius: 4px;
+}
+
+.messages li {
+  color: #b43434;
+  margin: 0;
+}
+
+.footer {
+  margin-top: 4rem;
+  text-align: center;
+  color: #9aa5b1;
+  font-size: 0.85rem;
+}

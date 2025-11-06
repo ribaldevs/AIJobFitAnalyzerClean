@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <form method="post" class="analysis-form">
+    <label for="resume">Paste your resume</label>
+    <textarea id="resume" name="resume" rows="12" placeholder="Highlight your experience, skills, and achievements." required></textarea>
+
+    <label for="job">Paste the job description</label>
+    <textarea id="job" name="job" rows="12" placeholder="Include responsibilities, required skills, and qualifications." required></textarea>
+
+    <button type="submit" class="button-primary">Analyze fit</button>
+  </form>
+{% endblock %}
