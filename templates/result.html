@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <section class="summary">
+    <h2>Compatibility score</h2>
+    <p class="score">{{ result.similarity }}%</p>
+    <p class="lead">A higher score means your resume and the job description use similar language.</p>
+    <a class="button" href="{{ url_for('index') }}">Analyze another role</a>
+  </section>
+
+  <section class="keywords">
+    <div>
+      <h3>Resume keywords</h3>
+      <ul>
+        {% for keyword in result.resume_keywords %}
+          <li>{{ keyword }}</li>
+        {% else %}
+          <li>No notable keywords detected.</li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div>
+      <h3>Job keywords</h3>
+      <ul>
+        {% for keyword in result.job_keywords %}
+          <li>{{ keyword }}</li>
+        {% else %}
+          <li>No notable keywords detected.</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+
+  <section class="gaps">
+    <div>
+      <h3>Potential gaps</h3>
+      <p class="section-help">Consider weaving these concepts into your resume if they match your experience.</p>
+      <ul>
+        {% for keyword in result.missing_keywords %}
+          <li>{{ keyword }}</li>
+        {% else %}
+          <li>Great news! We did not detect obvious missing keywords.</li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div>
+      <h3>Unique strengths</h3>
+      <p class="section-help">These keywords appear in your resume but not in the job description.</p>
+      <ul>
+        {% for keyword in result.extra_keywords %}
+          <li>{{ keyword }}</li>
+        {% else %}
+          <li>Your resume closely mirrors the job description.</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+{% endblock %}
